@@ -1,8 +1,13 @@
+# NOTE: the Liquipedia API key has been removed from this archived copy. Export it before
+# running:  export LIQUIPEDIA_API_KEY=...   The script is provided for provenance only:
+# the frozen outputs it produced are `esports_sem_final_v2.csv` in the repository root.
 #!/usr/bin/env python3
 """最终数据集重建 + SEM (N=25)"""
+import os
 import pandas as pd, numpy as np, json, requests, time
 
-AK = 'NjpSzj9UGbkMj92mIfZvpMK1SMP9Xbiem7108B1Jnc7X6u0x5BuuTklEna3M5XAn0Dl2Z3ufvY6fTIZQ3EW18HJcNiZXkyVAplAnINrV2Mxae6Gg7IYua9rnkbdPqfFG'
+# API key is supplied through the environment; it is never stored in the repository.
+AK = os.environ.get('LIQUIPEDIA_API_KEY', '')
 H = {'Authorization': 'Apikey ' + AK, 'Accept-Encoding': 'gzip'}
 B = 'https://api.liquipedia.net/api'
 

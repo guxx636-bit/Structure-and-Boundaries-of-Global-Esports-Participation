@@ -1,3 +1,5 @@
+# NOTE: the Liquipedia API key has been removed from this archived copy. Export it before
+# running:  export LIQUIPEDIA_API_KEY=...
 """
 ===============================================================
  Step 5: LiquipediaDB API v3 — 完整数据采集脚本
@@ -18,7 +20,8 @@ import pandas as pd
 import numpy as np
 import os
 
-API_KEY = "NjpSzj9UGbkMj92mIfZvpMK1SMP9Xbiem7108B1Jnc7X6u0x5BuuTklEna3M5XAn0Dl2Z3ufvY6fTIZQ3EW18HJcNiZXkyVAplAnINrV2Mxae6Gg7IYua9rnkbdPqfFG"
+# API key is supplied through the environment; it is never stored in the repository.
+API_KEY = os.environ.get('LIQUIPEDIA_API_KEY', '')
 BASE_URL = "https://api.liquipedia.net/api"
 HEADERS = {
     "Authorization": f"Apikey {API_KEY}",
